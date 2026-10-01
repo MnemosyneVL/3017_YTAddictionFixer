@@ -1,0 +1,43 @@
+{
+  "name": "youtube-budget",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Chrome extension \"Addiction Recovery for YouTube™\": a daily time budget, per-category limits, a watch-time tracker and statistics for YouTube.",
+  "license": "GPL-3.0-or-later",
+  "author": "onXI Digital",
+  "homepage": "https://github.com/MnemosyneVL/3017_YTAddictionFixer#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MnemosyneVL/3017_YTAddictionFixer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MnemosyneVL/3017_YTAddictionFixer/issues"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "watch": "node build.mjs --watch",
+    "icons": "node scripts/make-icons.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm run test && npm run build",
+    "package": "npm run typecheck && npm run test && node build.mjs --release --outdir release/unpacked && node scripts/package.mjs",
+    "e2e": "node e2e/run.mjs",
+    "e2e:setup": "node e2e/setup.mjs",
+    "prepare": "git config core.hooksPath .githooks",
+    "e2e:ui": "node e2e/ui.mjs",
+    "e2e:stale": "node e2e/stale.mjs",
+    "e2e:release": "node e2e/release.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.2.7",
+    "esbuild": "^0.28.2",
+    "puppeteer": "^25.8.0",
+    "typescript": "^7.0.2",
+    "vitest": "^4.1.11"
+  }
+}

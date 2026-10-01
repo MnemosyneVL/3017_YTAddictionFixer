@@ -1,0 +1,16 @@
+.page-popup { width: 340px; min-height: 120px; padding: 12px; }
+.page-popup h1 { font-size: 15px; margin: 0; }
+.page-popup .total { font-size: 26px; font-weight: 700; margin: 6px 0 2px; font-variant-numeric: tabular-nums; }
+.page-popup .cat { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; align-items: center; padding: 6px 0; }
+.page-popup .cat .bar { grid-column: 1 / -1; }
+.page-popup .feedback { margin-bottom: 12px; }
+.page-popup .feedback .note { font-size: 13px; }
+.page-popup .tomorrow { grid-column: 1 / -1; margin-top: 2px; }
+.page-popup .cat .name { display: flex; align-items: center; gap: 6px; }
+.page-popup .footer { display: flex; gap: 6px; margin-top: 12px; }
+.page-popup .footer .btn { flex: 1; justify-content: center; padding: 6px 8px; }
+.page-popup .links { list-style: none; margin: 6px 0 0; padding: 0; }
+.page-popup .links li { padding: 5px 0; border-top: 1px solid var(--border); }
+.page-popup .links .t { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.page-popup .links .row { gap: 6px; }
+.page-popup .chip { display: inline-flex; align-items: center; white-space: nowrap; }

@@ -1,0 +1,54 @@
+.page-welcome .container { max-width: 760px; padding-top: 36px; }
+.page-welcome .hero { text-align: center; margin-bottom: 20px; }
+.page-welcome .hero .icon { width: 72px; height: 72px; margin-bottom: 6px; }
+.page-welcome .hero h1 { font-size: 26px; margin-bottom: 4px; }
+.page-welcome .hero .lead { font-size: 16px; color: var(--muted); }
+.page-welcome h2 { margin-top: 0; }
+.page-welcome h3 { margin: 16px 0 8px; }
+
+.page-welcome .steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px 20px; }
+.page-welcome .step { display: flex; gap: 10px; align-items: flex-start; }
+.page-welcome .step h3 { margin: 0 0 2px; }
+.page-welcome .step p { margin: 0; }
+.page-welcome .step .num {
+  flex: none; width: 26px; height: 26px; border-radius: 50%; background: var(--accent); color: var(--accent-text);
+  display: inline-flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px;
+}
+
+.page-welcome .presets { gap: 6px; }
+.page-welcome .preset[aria-pressed="true"] { background: var(--accent); color: var(--accent-text); border-color: transparent; }
+.page-welcome .presets input[type="number"] { width: 5.5em; }
+
+.page-welcome .cats { display: flex; flex-direction: column; margin-bottom: 4px; }
+.page-welcome .catrow { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.page-welcome .catrow.off { opacity: 0.6; }
+.page-welcome .catrow .pick { gap: 8px; cursor: pointer; }
+.page-welcome .catrow .swatch { margin-right: 0; }
+.page-welcome .catrow input[type="number"] { width: 8.5em; }
+.page-welcome .catrow input[type="text"] { width: 14em; }
+
+.page-welcome .start { text-align: center; }
+.page-welcome .start .big { font-size: 16px; padding: 10px 44px; margin-bottom: 8px; }
+.page-welcome .start .notice { text-align: left; margin-bottom: 10px; }
+
+.page-welcome .tips, .page-welcome .legend { margin: 0 0 12px; padding-left: 18px; }
+.page-welcome .tips li, .page-welcome .legend li { margin-bottom: 6px; }
+.page-welcome .legend { list-style: none; padding-left: 0; }
+.page-welcome .legend .mark {
+  display: inline-flex; align-items: center; justify-content: center; min-width: 30px; height: 20px; margin-right: 10px;
+  border-radius: 4px; color: #fff; font-size: 12px; font-weight: 700; padding: 0 4px;
+}
+.page-welcome .legend .mark.ok { background: #2e7d32; }
+.page-welcome .legend .mark.warn { background: #ef6c00; }
+.page-welcome .legend .mark.stop { background: #c62828; }
+
+.page-welcome .faq { margin: 0; }
+.page-welcome .faq dt { font-weight: 600; margin-top: 12px; }
+.page-welcome .faq dt:first-child { margin-top: 0; }
+.page-welcome .faq dd { margin: 2px 0 0; }
+.page-welcome .card + p.row { margin-top: 14px; }
+
+@media (max-width: 620px) {
+  .page-welcome .steps { grid-template-columns: 1fr; }
+  .page-welcome .catrow { flex-direction: column; align-items: flex-start; }
+}

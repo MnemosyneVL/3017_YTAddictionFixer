@@ -1,0 +1,12 @@
+#!/bin/sh
+# Refuse commits that change extension code without updating the changelog.
+# Bypassing with --no-verify defeats the purpose; fix the changelog instead.
+staged=$(git diff --cached --name-only --diff-filter=ACMR)
+code_changed=$(printf '%s\n' "$staged" | grep -E '^(src|public|scripts|e2e)/|^build\.mjs$' | head -1)
+changelog_staged=$(printf '%s\n' "$staged" | grep -E '^CHANGELOG\.md$' | head -1)
+if [ -n "$code_changed" ] && [ -z "$changelog_staged" ]; then
+  echo "pre-commit: code changed ($code_changed) but CHANGELOG.md is not staged." >&2
+  echo "pre-commit: add an entry under [Unreleased] in CHANGELOG.md and stage it." >&2
+  exit 1
+fi
+exit 0

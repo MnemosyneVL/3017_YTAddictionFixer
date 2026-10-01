@@ -1,0 +1,14 @@
+.page-blocked .container { max-width: 720px; padding-top: 48px; }
+.page-blocked .hero { text-align: center; margin-bottom: 24px; }
+.page-blocked .hero .icon { width: 64px; height: 64px; margin-bottom: 8px; }
+.page-blocked .video { display: flex; gap: 14px; align-items: flex-start; }
+.page-blocked .video img { width: 160px; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 8px; background: var(--surface-2); }
+.page-blocked .video .title { font-weight: 600; margin-bottom: 2px; }
+.page-blocked .links li { display: flex; gap: 8px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.page-blocked .links li:last-child { border-bottom: none; }
+.page-blocked .links .t { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.page-blocked ul { list-style: none; margin: 0; padding: 0; }
+.page-blocked .first { margin-bottom: 12px; border-color: var(--accent); }
+.page-blocked .first h2 { margin: 0; }
+.page-blocked .first ul { list-style: disc; padding-left: 18px; }
+.page-blocked .first li { margin-bottom: 4px; }

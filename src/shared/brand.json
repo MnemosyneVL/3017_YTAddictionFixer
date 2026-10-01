@@ -1,0 +1,16 @@
+{
+  "name": "Addiction Recovery for YouTube™",
+  "label": "Addiction Recovery",
+  "suffix": "for YouTube™",
+  "neutral": "Time budget",
+  "slug": "addiction-recovery-for-youtube",
+  "fileStem": "youtube-time-budget",
+  "summary": "Take your time back from YouTube: a daily time budget, per-category limits, a watch-time tracker and statistics. Fully on-device.",
+  "author": "onXI Digital",
+  "links": {
+    "tips": "https://ko-fi.com/onxidigital",
+    "source": "https://github.com/MnemosyneVL/3017_YTAddictionFixer",
+    "privacy": "https://github.com/MnemosyneVL/3017_YTAddictionFixer/blob/main/PRIVACY.md",
+    "issues": "https://github.com/MnemosyneVL/3017_YTAddictionFixer/issues"
+  }
+}

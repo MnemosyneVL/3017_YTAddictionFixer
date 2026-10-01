@@ -1,0 +1,15 @@
+node_modules/
+dist/
+release/
+e2e/.profile/
+e2e/.cache/
+*.log
+.DS_Store
+Thumbs.db
+
+# test screenshots
+*.png
+!public/icons/*.png
+
+# dedicated browser profile created by start.bat
+.yt-budget-profile/

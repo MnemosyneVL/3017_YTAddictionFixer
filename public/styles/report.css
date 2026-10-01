@@ -1,0 +1,6 @@
+.page-report .ranges { display: flex; gap: 6px; flex-wrap: wrap; }
+.page-report .ranges button.active { background: var(--accent); color: var(--accent-text); border-color: transparent; }
+.page-report .chart { width: 100%; height: auto; display: block; }
+.page-report .legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; margin-top: 6px; }
+.page-report .catrow { display: grid; grid-template-columns: 180px 1fr 90px 60px; gap: 8px; align-items: center; padding: 5px 0; }
+.page-report .catrow .bar { height: 12px; }
