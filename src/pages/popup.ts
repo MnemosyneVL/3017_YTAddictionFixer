@@ -187,7 +187,7 @@ function draw(s: StatusSnapshot, banner: HTMLElement | null = null, cv: CurrentV
     h(
       'div',
       { class: 'footer' },
-      h('button', { class: 'btn', onClick: () => openExtensionPage('report.html') }, 'Report'),
+      h('button', { class: 'btn', onClick: () => openExtensionPage('report.html') }, 'Statistics'),
       h('button', { class: 'btn', onClick: () => openExtensionPage('options.html') }, 'Settings'),
       h('button', { class: 'btn', onClick: () => openExtensionPage('welcome.html') }, 'Help'),
     ),

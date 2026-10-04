@@ -63,7 +63,7 @@ function draw(info: BlockInfo): void {
       },
       `Use emergency override (${info.overrideMinutes} min, ${info.overridesLeft} left today)`,
     );
-    return h('div', { class: 'stack' }, btn, h('p', { class: 'muted small' }, 'Overrides are logged in your report. The extra minutes end with a hard cutoff.'));
+    return h('div', { class: 'stack' }, btn, h('p', { class: 'muted small' }, 'Overrides are logged in your statistics. The extra minutes end with a hard cutoff.'));
   })();
 
   const video = info.videoId
@@ -134,7 +134,7 @@ function draw(info: BlockInfo): void {
       ? h('div', { class: 'card stack' }, h('div', { class: 'row' }, closeBtn), overrideRow)
       : h('div', { class: 'card stack' }, video, h('div', { class: 'row' }, openBtn, copyBtn, closeBtn), overrideRow),
     savedCard,
-    h('p', { class: 'row small muted' }, h('button', { class: 'link', onClick: () => openExtensionPage('report.html') }, 'Report'), h('button', { class: 'link', onClick: () => openExtensionPage('options.html') }, 'Settings'), h('button', { class: 'link', onClick: () => openExtensionPage('welcome.html') }, 'How it works')),
+    h('p', { class: 'row small muted' }, h('button', { class: 'link', onClick: () => openExtensionPage('report.html') }, 'Statistics'), h('button', { class: 'link', onClick: () => openExtensionPage('options.html') }, 'Settings'), h('button', { class: 'link', onClick: () => openExtensionPage('welcome.html') }, 'How it works')),
   );
 }
 

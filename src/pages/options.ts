@@ -118,7 +118,7 @@ function generalCard(): HTMLElement {
   add(
     'Emergency override',
     h('span', {}, `${config.overrideMinutes} minutes, ${config.overridesPerDay === 1 ? 'once' : `${config.overridesPerDay} times`} a day`),
-    'Offered on the page you see when YouTube is closed. It lifts the limits and blocked hours for those minutes, ends with a hard stop, and every use is listed in the report.',
+    'Offered on the page you see when YouTube is closed. It lifts the limits and blocked hours for those minutes, ends with a hard stop, and every use is listed in your statistics.',
   );
 
   return h('div', { class: 'card' }, h('h2', {}, 'General'), grid);
@@ -185,7 +185,7 @@ function categoryRow(cat: Category, redraw: () => void): HTMLElement {
     const del = h('button', {
       class: 'link',
       onClick: () => {
-        if (!confirm(`Delete “${cat.name}”? Past time stays in your report but the category is removed.`)) return;
+        if (!confirm(`Delete “${cat.name}”? Past time stays in your statistics but the category is removed.`)) return;
         config.categories = config.categories.filter((c) => c.id !== cat.id);
         if (config.shortsCategoryId === cat.id) config.shortsCategoryId = config.categories.find((c) => !c.builtin && !c.archived)?.id ?? 'browsing';
         for (const [k, r] of Object.entries(config.channelRules)) if (r.categoryId === cat.id) delete config.channelRules[k];

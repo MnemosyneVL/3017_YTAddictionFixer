@@ -34,6 +34,11 @@ describe('brand', () => {
     }
   });
 
+  it('calls the statistics page "Statistics", not "Report"', () => {
+    // "Report" next to an extension reads like "report this extension"; only the file keeps that name.
+    expect(titleOf(reportHtml).startsWith('Statistics')).toBe(true);
+  });
+
   it('only ever hands out https links, and none while a link is not set', () => {
     for (const [key, url] of Object.entries(brand.links)) {
       expect(url === '' || url.startsWith('https://'), key).toBe(true);

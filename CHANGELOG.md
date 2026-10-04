@@ -7,6 +7,11 @@ adheres to [Semantic Versioning](https://semver.org/).
 ## [Unreleased]
 
 ### Changed
+- The report is now called **Statistics** everywhere in the extension: the button in the popup, the links on
+  the placeholder and help pages, the page's heading and tab title, and the explanations in Settings. A button
+  that said "Report" looked like "report this extension". CSV exports are named
+  `youtube-time-budget-statistics-…`. The privacy policy uses the same word now; what is recorded has not
+  changed.
 - The README links to the extension's page in the Chrome Web Store, now that it is published: installing is
   one click on "Add to Chrome" there.
 

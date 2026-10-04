@@ -1,4 +1,5 @@
-// Report page: category split, per-day chart, top channels and videos over a range.
+// Statistics page: category split, per-day chart, top channels and videos over a range. The interface calls it
+// "Statistics" ("Report" read like "report this extension"); files, types and requests keep the name "report".
 import { FILE_STEM } from '../shared/brand';
 import { reportToCsv, type Report } from '../shared/report';
 import { addDays, dayKeyFor, formatDuration } from '../shared/time';
@@ -27,7 +28,7 @@ async function load(): Promise<void> {
   try {
     report = await request('getReport', { from, to });
   } catch (e) {
-    render(h('p', {}, `Could not load the report: ${e instanceof Error ? e.message : String(e)}`));
+    render(h('p', {}, `Could not load the statistics: ${e instanceof Error ? e.message : String(e)}`));
     return;
   }
   draw(report, await feedbackCard(() => void load()));
@@ -134,7 +135,7 @@ function draw(report: Report, feedback: HTMLElement | null = null): void {
   );
 
   render(
-    h('div', { class: 'row between' }, brandHeading('Report'), h('button', { onClick: () => exportCsv(report) }, 'Export CSV')),
+    h('div', { class: 'row between' }, brandHeading('Statistics'), h('button', { onClick: () => exportCsv(report) }, 'Export CSV')),
     feedback,
     rangeBar(),
     h('div', { class: 'card' }, h('div', { class: 'row between' }, h('h2', {}, 'Total'), h('span', {}, formatDuration(report.totalSec))), empty ? h('p', { class: 'muted' }, 'No YouTube time recorded in this range.') : chart(report), empty ? null : legend(report)),
@@ -155,7 +156,7 @@ async function exportCsv(report: Report): Promise<void> {
   const blob = new Blob([csv], { type: 'text/csv' });
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
-  a.download = `${FILE_STEM}-report-${report.from}_${report.to}.csv`;
+  a.download = `${FILE_STEM}-statistics-${report.from}_${report.to}.csv`;
   a.click();
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }

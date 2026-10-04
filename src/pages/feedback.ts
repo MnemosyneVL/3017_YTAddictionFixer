@@ -1,5 +1,5 @@
 // The author's note asking for a rating and a comment, with the Ko-fi link second. It appears as a card in the
-// popup, on the report page and in Settings after a week, a month and three months of use (never as a system
+// popup, on the statistics page and in Settings after a week, a month and three months of use (never as a system
 // notification, never while YouTube is blocked), and permanently in the Support block at the end of Settings.
 import { APP_NAME, link, storeReviewsUrl } from '../shared/brand';
 import type { FeedbackAction } from '../shared/messages';

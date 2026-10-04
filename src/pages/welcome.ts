@@ -61,7 +61,7 @@ function howItWorks(): HTMLElement {
       step(1, 'You give YouTube a daily time budget.', 'Time counts while a video plays or while you are actively looking at YouTube. The number on the toolbar icon is the minutes you have left today.'),
       step(2, 'Every new video asks one thing: what is this?', 'You pick a category with one click (or keys 1–9); the video waits until you do. A channel can be given a category for good, and a click on the small timer on the video changes it later.'),
       step(3, 'When the budget is used up, you finish what you are watching.', 'After that YouTube is closed until tomorrow. Every video you were stopped on is saved for later, so nothing is lost.'),
-      step(4, 'There is no easy way out.', 'Raising a limit takes effect tomorrow; lowering one works at once. One 15-minute emergency override a day is allowed, and it shows up in your report.'),
+      step(4, 'There is no easy way out.', 'Raising a limit takes effect tomorrow; lowering one works at once. One 15-minute emergency override a day is allowed, and it shows up in your statistics.'),
     ),
   );
 }
@@ -304,7 +304,7 @@ function draw(): void {
       legend(),
       faq(),
       recorded(),
-      h('p', { class: 'row small muted' }, h('button', { class: 'link', onClick: () => openExtensionPage('options.html') }, 'Settings'), h('button', { class: 'link', onClick: () => openExtensionPage('report.html') }, 'Report')),
+      h('p', { class: 'row small muted' }, h('button', { class: 'link', onClick: () => openExtensionPage('options.html') }, 'Settings'), h('button', { class: 'link', onClick: () => openExtensionPage('report.html') }, 'Statistics')),
     );
   }
 }

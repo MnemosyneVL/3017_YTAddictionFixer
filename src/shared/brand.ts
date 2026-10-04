@@ -12,7 +12,7 @@ export const APP_SUFFIX: string = brand.suffix;
  * see the screen, so they do not carry the product name.
  */
 export const NEUTRAL_LABEL: string = brand.neutral;
-/** Stem of the files the user downloads (backup, CSV report). */
+/** Stem of the files the user downloads (backup, CSV export of the statistics). */
 export const FILE_STEM: string = brand.fileStem;
 export const AUTHOR: string = brand.author;
 /** Prefix of console messages. */

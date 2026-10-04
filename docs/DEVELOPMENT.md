@@ -20,7 +20,7 @@
 | `npm run icons` | Regenerates `public/icons/*.png` (no dependencies). `-- --design ring` renders the fallback design, `-- --preview <file.png>` also writes a sheet with every size enlarged on a light and a dark toolbar colour. |
 | `npm run e2e` | Browser smoke tests with Puppeteer + Chrome for Testing (see below). |
 | `npm run e2e:setup` | First-run flow against real youtube.com: nothing is recorded before "Start", the chosen limit applies the same day, an open video is picked up, "Delete everything" returns to the first-run state, an older installation is not gated. |
-| `npm run e2e:ui [dir]` | Screenshots every extension page into `dir` (default: the temp folder): the welcome page, popup and settings of a fresh installation, then popup, settings, report and the help page with sample data. Fails on a page error or an unrendered page. |
+| `npm run e2e:ui [dir]` | Screenshots every extension page into `dir` (default: the temp folder): the welcome page, popup and settings of a fresh installation, then popup, settings, statistics (`report.png`) and the help page with sample data. Fails on a page error or an unrendered page. |
 | `npm run e2e:stale` | Verifies the stale-service-worker banner (no banner when builds match, banner on mismatch). |
 | `node e2e/shot.mjs` | Ad-hoc: screenshots the player with the timer pill (`%TEMP%\ytb-pill.png`). |
 | `node e2e/shelf-shot.mjs` | Ad-hoc: seeds three saved links and screenshots the saved-for-later shelf on the home feed in both themes (`%TEMP%\ytb-shelf-{light,dark}.png`). |
@@ -107,7 +107,7 @@ relaunches). Open YouTube tabs are re-injected automatically after a reload.
 5. Click *Use emergency override*: YouTube works again; after the override minutes it is cut off immediately.
 6. Set *Entertainment* to 1 minute. Categorize a video as Entertainment; after it ends, the next Entertainment
    video is blocked while a *Learning* video still plays.
-7. The report shows the time split by category; raising a limit shows "effective tomorrow".
+7. The Statistics page shows the time split by category; raising a limit shows "effective tomorrow".
 8. Minimize the window while a video plays → time keeps counting (playing). Pause and minimize → it does not.
 9. Let the finish-it video play to its end → the "you finished your video" screen appears and the video is NOT
    in the saved list. Click the timer pill mid-video → the prompt reopens and re-categorizing moves the minutes.

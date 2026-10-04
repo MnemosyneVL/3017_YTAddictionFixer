@@ -1,7 +1,7 @@
 # Privacy policy
 
 **Addiction Recovery for YouTube™**, a browser extension published by onXI Digital.
-Last updated: 1 October 2026.
+Last updated: 4 October 2026.
 
 ## In short
 
@@ -15,11 +15,11 @@ Once you have pressed Start, the extension stores:
 
 | What | Why |
 |---|---|
-| The YouTube videos you open or are stopped on: address, title, channel name and channel id | To ask for a category once per video, to show your saved-for-later list and your report |
-| How long you watch each video and how long you spend on other YouTube pages, per day, with the first and last time of day | To count your time against your limits and to draw the report |
+| The YouTube videos you open or are stopped on: address, title, channel name and channel id | To ask for a category once per video, to show your saved-for-later list and your statistics |
+| How long you watch each video and how long you spend on other YouTube pages, per day, with the first and last time of day | To count your time against your limits and to draw the statistics |
 | The category you give each video, and the channels you file under a category for good | To budget your time by category |
 | The videos saved for later (address, title, when) | So that a video you were stopped on is not lost |
-| When a warning was shown, a limit was reached or the emergency override was used | For the report |
+| When a warning was shown, a limit was reached or the emergency override was used | For the statistics |
 | Your settings: limits, categories, blocked hours and the other options | To do what you asked |
 | The address of each YouTube tab that is open right now and whether it currently counts | To count time correctly; kept only while the browser is running |
 | Whether you finished setup, which one-time tips you have seen and which feedback reminders you have answered | So that they are not shown again |
@@ -55,7 +55,7 @@ site opens in a new tab and its own privacy policy applies. The extension sends 
 ## What the record is used for
 
 Only for the features you see: counting time, enforcing your limits and blocked hours, asking for a video's
-category, the saved-for-later list, the report, and the reminders described above. It is not sold, not shared,
+category, the saved-for-later list, the statistics, and the reminders described above. It is not sold, not shared,
 not used for advertising, and not used to judge creditworthiness or for lending.
 
 The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy,

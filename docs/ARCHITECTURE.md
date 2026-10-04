@@ -27,7 +27,7 @@ TypeScript in `src/shared/` and unit-tested; the service worker and content scri
 | Service worker | `src/background/*.ts` | Owns all state. Receives heartbeats, credits time, detects limits, decides allow/block, enforces, notifies, keeps the badge, schedules alarms, fetches video metadata (oEmbed). |
 | Content script | `src/content/index.ts`, `player.ts`, `prompt.ts`, `timer.ts`, `toast.ts`, `shelf.ts` | Observes the page (visibility, focus, `<video>` state, fullscreen, PiP), sends heartbeats, shows the category prompt, the on-video timer pill, toasts and the saved-for-later shelf on the feed, executes blocks (`location.replace`). |
 | Bridge | `src/content/bridge.ts` (MAIN world) | Reads YouTube's player API (`#movie_player`): video id, channel id, title, live flag, duration/current time, player state. Posts plain objects via `window.postMessage`. |
-| Pages | `src/pages/*.ts` + `public/*.html` | Placeholder (blocked), popup (today's budgets, current video, newest saved links), options, report, welcome (first-run setup, afterwards the help page). Talk to the service worker with request/response messages. |
+| Pages | `src/pages/*.ts` + `public/*.html` | Placeholder (blocked), popup (today's budgets, current video, newest saved links), options, statistics (`report.html`; the interface says "Statistics", the files, types and the `getReport` request keep the name "report"), welcome (first-run setup, afterwards the help page). Talk to the service worker with request/response messages. |
 
 ## Counting rule (`src/shared/counting.ts`)
 
@@ -189,7 +189,7 @@ The only thing the extension ever asks for: a short note from the author (rate a
 second, shown only when `brand.json` has a `tips` link). `dueFeedback()` makes it due 7, 30 and 90 days after
 `meta.setupAt`, unless `config.feedbackReminders` is off or a block is active; milestones that went by
 unanswered collapse into the latest one. `getOnboarding` reports it as `feedbackDue`, and `feedbackCard()`
-renders it at the top of the popup, the report page and Settings. Every button sends `feedbackAction`
+renders it at the top of the popup, the statistics page and Settings. Every button sends `feedbackAction`
 (`rate` / `tips` / `later` / `never`), which records the milestone in `meta.feedbackDone`; `never` also clears
 `config.feedbackReminders`. It is never a system notification and never appears inside YouTube or on the
 placeholder page. The same note sits permanently in the Support block at the end of Settings, next to the

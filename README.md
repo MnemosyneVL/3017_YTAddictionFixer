@@ -17,8 +17,8 @@ which is then wasted tomorrow. This extension replaces both with budgets that fo
   cannot be watched today) and in the toolbar popup, so your own list competes with the recommendations right
   where you decide what to watch next.
 - **Categories.** Every new video asks for a category you chose yourself (Learning, Entertainment, Music, …).
-  The question pauses the video until you answer; a channel can be set to always use one category. Reports
-  show where the time actually goes. Misjudged a video? Click the timer on the player (or use the popup's
+  The question pauses the video until you answer; a channel can be set to always use one category. The
+  statistics show where the time actually goes. Misjudged a video? Click the timer on the player (or use the popup's
   "Current video" row) to change its category; today's minutes move with it.
 - **Finish-it allowances per category.** How long the current video may continue once a limit is reached is a
   per-category setting: Learning can run to the end of the video, Entertainment can be capped at, say, 30
@@ -33,9 +33,9 @@ which is then wasted tomorrow. This extension replaces both with budgets that fo
 - **A timer where you look.** An optional small timer on the video itself (fullscreen included) shows how much
   of today's budget is left and the current video's category with its color; corner and on/off in Settings.
 - **No easy escape hatch.** Raising a budget takes effect tomorrow (lowering applies immediately). There is one
-  logged *emergency override* per day: 15 extra minutes, cut off hard when they are over, visible in the report.
-- **Statistics.** A report with the category split per day, the top channels and videos, the limits you hit
-  and the overrides you used, exportable as CSV.
+  logged *emergency override* per day: 15 extra minutes, cut off hard when they are over, visible in your statistics.
+- **Statistics.** The category split per day, the top channels and videos, the limits you hit and the overrides
+  you used, exportable as CSV.
 
 It is a self-control tool, not a parental control and not medical treatment: you can always switch it off.
 
@@ -69,7 +69,7 @@ players on other sites are not covered.
   counts as time, the on-video timer, the saved-for-later shelf, categories and their budgets, Shorts, blocked
   hours, channel rules, saved links, and your data: export, import (checked before anything is replaced),
   clear the history, or delete everything. Every setting says what it does.
-- **Report**: category split per day / 7 days / 30 days / custom range, top channels and videos, overrides.
+- **Statistics**: category split per day / 7 days / 30 days / custom range, top channels and videos, overrides.
 - **Incognito windows** are only covered if you enable *Allow in Incognito* in the extension's details.
 
 ### What counts as time
