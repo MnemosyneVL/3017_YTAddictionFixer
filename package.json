@@ -1,6 +1,6 @@
 {
   "name": "youtube-budget",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Chrome extension \"Addiction Recovery for YouTube™\": a daily time budget, per-category limits, a watch-time tracker and statistics for YouTube.",
   "license": "GPL-3.0-or-later",

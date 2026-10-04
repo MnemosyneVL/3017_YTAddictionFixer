@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Addiction Recovery for YouTube™ – Time Limit, Tracker & Blocker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "YouTube detox for focus and productivity: a daily time budget, time tracker, statistics and a distraction blocker. Fully on-device.",
   "minimum_chrome_version": "120",
   "icons": {

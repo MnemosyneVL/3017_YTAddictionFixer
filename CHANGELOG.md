@@ -6,6 +6,8 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [1.0.1] - 2026-10-04
+
 ### Changed
 - The report is now called **Statistics** everywhere in the extension: the button in the popup, the links on
   the placeholder and help pages, the page's heading and tab title, and the explanations in Settings. A button

@@ -31,8 +31,8 @@ extension's own pages and the toolbar tooltip show. The title adds what it does,
 
 Google describes Workflow & Planning as "time trackers, tools to stay focused, …", and the comparable
 extensions are filed there (see "Search" below). The dashboard follows the language of the Google account and
-translates the category names with it; in Russian this one is «Работа и планирование» (Well-being, where the
-listing was for a short while, is «Здоровье»).
+translates the category names with it; in Russian this one is «Работа и планирование» (Well-being, the first
+plan, is «Здоровье»).
 
 **Description:**
 
