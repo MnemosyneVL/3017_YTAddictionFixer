@@ -6,6 +6,10 @@ adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- The README links to the extension's page in the Chrome Web Store, now that it is published: installing is
+  one click on "Add to Chrome" there.
+
 ## [1.0.0] - 2026-10-01
 
 The first public release, as **Addiction Recovery for YouTube™** in the Chrome Web Store. Earlier versions

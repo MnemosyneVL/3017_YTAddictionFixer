@@ -41,7 +41,9 @@ It is a self-control tool, not a parental control and not medical treatment: you
 
 ## Install
 
-**From the Chrome Web Store.** The listing is in preparation; this section gets the link once it is live.
+**From the Chrome Web Store.** Open
+[Addiction Recovery for YouTube™](https://chromewebstore.google.com/detail/addiction-recovery-for-yo/fojplifgklngfhhipbpnmkgmjlnkmhdp)
+in the store and press *Add to Chrome*.
 
 **From source.**
 
@@ -113,8 +115,9 @@ scripting, and for nothing else; in particular not for your browsing history.
 
 The extension is free, with nothing locked behind a payment. After a week, a month and three months of use a
 small card asks whether it helped and for a rating; it can be switched off under *Settings → Support this
-project*. A rating and a comment in the Chrome Web Store are the most useful thing you can give. Bugs and ideas
-belong in the [issue tracker](https://github.com/MnemosyneVL/3017_YTAddictionFixer/issues). If you would like to support the work:
+project*. A rating and a comment in the
+[Chrome Web Store](https://chromewebstore.google.com/detail/addiction-recovery-for-yo/fojplifgklngfhhipbpnmkgmjlnkmhdp/reviews)
+are the most useful thing you can give. Bugs and ideas belong in the [issue tracker](https://github.com/MnemosyneVL/3017_YTAddictionFixer/issues). If you would like to support the work:
 [ko-fi.com/onxidigital](https://ko-fi.com/onxidigital).
 
 ## Roadmap

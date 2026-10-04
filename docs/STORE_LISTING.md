@@ -5,6 +5,10 @@ step with the extension: a new permission or a change in what is recorded change
 
 Dashboard: <https://chrome.google.com/webstore/devconsole>
 
+Listing: <https://chromewebstore.google.com/detail/addiction-recovery-for-yo/fojplifgklngfhhipbpnmkgmjlnkmhdp>
+(item ID `fojplifgklngfhhipbpnmkgmjlnkmhdp`). A new or renamed item can be opened by this address at once; the
+store's own search picks it up later.
+
 ## Before the first upload
 
 1. `npm run package` and `npm run e2e:release` are green; upload `release/addiction-recovery-for-youtube-<version>.zip`.
@@ -20,6 +24,10 @@ Dashboard: <https://chrome.google.com/webstore/devconsole>
 > Take your time back from YouTube: a daily time budget, per-category limits, a watch-time tracker and statistics. Fully on-device.
 
 **Category:** Well-being  **Language:** English
+
+The dashboard follows the language of the Google account, and the category names are translated with it:
+Well-being is the last entry of the Lifestyle group (in Russian the group is «Образ жизни» and the category
+«Здоровье»).
 
 **Description:**
 
