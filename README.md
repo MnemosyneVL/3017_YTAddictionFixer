@@ -1,7 +1,8 @@
 # Addiction Recovery for YouTube™
 
-A Chrome extension that gives your YouTube time a budget: it keeps what is worth watching and stops the rest
-from eating the day.
+A Chrome extension that gives your YouTube time a budget: a daily time limit, a watch-time tracker with
+statistics, and a blocker that closes the site once the budget is used up. It keeps what is worth watching and
+stops the rest from eating the day.
 
 Blocking YouTube outright also blocks the things worth learning from it. A flat daily limit does not work
 either: a 15-minute tutorial leaves 45 minutes of doomscrolling, and a 2-hour video forces the limit up,

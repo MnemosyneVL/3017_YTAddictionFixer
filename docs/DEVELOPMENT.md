@@ -11,7 +11,7 @@
 |---|---|
 | `npm install` | Installs dev dependencies and points git at `.githooks/` (pre-commit hook). |
 | `npm run build` | Cleans and rebuilds `dist/` (bundles `src/` with esbuild, copies `public/`). This is the development build: it includes the hook the e2e harness talks to (`src/background/test-hook.ts`). |
-| `npm run package` | The store package: typecheck, unit tests, a release build without the test hook into `release/unpacked/`, then `scripts/package.mjs` checks it (name and summary lengths, version, the exact permission list, every referenced file, icon sizes, no source maps, no test hook, no `eval`, required links, `LICENSE`) and writes `release/<slug>-<version>.zip`, read back and verified. `-- --draft` packs although links or the license are still missing, as `…-draft.zip`. |
+| `npm run package` | The store package: typecheck, unit tests, a release build without the test hook into `release/unpacked/`, then `scripts/package.mjs` checks it (store title and summary against `brand.json` and their lengths, version, the exact permission list, every referenced file, icon sizes, no source maps, no test hook, no `eval`, required links, `LICENSE`) and writes `release/<slug>-<version>.zip`, read back and verified. `-- --draft` packs although links or the license are still missing, as `…-draft.zip`. |
 | `npm run e2e:release` | Smoke test of `release/unpacked` in Chrome for Testing: the worker starts without the test hook, the welcome page opens, Start works, every page renders. |
 | `npm run watch` | Rebuilds bundles on change (static files in `public/` are copied only at start). |
 | `npm run typecheck` | `tsc --noEmit` over `src/`. |
@@ -127,7 +127,8 @@ relaunches). Open YouTube tabs are re-injected automatically after a reload.
 3. In `CHANGELOG.md`, rename `[Unreleased]` to `[x.y.z] - YYYY-MM-DD` and add a fresh empty `[Unreleased]`.
 4. Commit `docs: release x.y.z`, tag `vx.y.z`.
 5. `npm run package`, then `npm run e2e:release`. Upload `release/<slug>-<version>.zip` in the Chrome Web Store
-   developer dashboard (texts and answers for the listing are in `docs/STORE_LISTING.md`).
+   developer dashboard (texts and answers for the listing are in `docs/STORE_LISTING.md`; "Updating the
+   listing" there says what travels in the package and what is edited in the dashboard).
 
 A new permission makes `npm run package` fail on purpose: add it to `EXPECTED_PERMISSIONS` in
 `scripts/package.mjs` only together with its justification in `docs/STORE_LISTING.md`.

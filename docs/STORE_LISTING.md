@@ -17,39 +17,48 @@ store's own search picks it up later.
 
 ## Store listing tab
 
-**Name** (comes from the package): `Addiction Recovery for YouTube™`
+**Title** (comes from the package: `title` in `src/shared/brand.json`, 75 characters at most):
+`Addiction Recovery for YouTube™ – Time Limit, Tracker & Blocker`
 
-**Summary** (comes from the package, 132 characters at most):
+The product's name stays `Addiction Recovery for YouTube™` (`name` in `brand.json`): that is what the
+extension's own pages and the toolbar tooltip show. The title adds what it does, in the words people search for.
 
-> Take your time back from YouTube: a daily time budget, per-category limits, a watch-time tracker and statistics. Fully on-device.
+**Summary** (comes from the package: `summary` in `brand.json`, 132 characters at most):
 
-**Category:** Well-being  **Language:** English
+> YouTube detox for focus and productivity: a daily time budget, time tracker, statistics and a distraction blocker. Fully on-device.
 
-The dashboard follows the language of the Google account, and the category names are translated with it:
-Well-being is the last entry of the Lifestyle group (in Russian the group is «Образ жизни» and the category
-«Здоровье»).
+**Category:** Workflow & Planning  **Language:** English
+
+Google describes Workflow & Planning as "time trackers, tools to stay focused, …", and the comparable
+extensions are filed there (see "Search" below). The dashboard follows the language of the Google account and
+translates the category names with it; in Russian this one is «Работа и планирование» (Well-being, where the
+listing was for a short while, is «Здоровье»).
 
 **Description:**
 
 ```
-Blocking YouTube outright also blocks what is worth watching there. A flat daily timer fails the other way: a 15-minute tutorial leaves 45 minutes for scrolling, and a 2-hour lecture forces the limit up for good.
+A daily time limit for YouTube that follows what you watch, lets you finish the video you are on, and then closes the site until tomorrow.
 
-Addiction Recovery for YouTube™ gives your watching a budget that follows what you watch, and it lets you finish the video you are on.
+Banning the site outright also takes away what is worth watching there. A flat daily timer fails the other way: a 15-minute tutorial leaves 45 minutes for scrolling, and a 2-hour lecture forces the limit up for good. This extension budgets your time by category instead, so learning stays and doomscrolling goes: a detox you can keep up, not a ban.
 
 HOW IT WORKS
-• A daily time budget. A watch-time tracker counts the time a video plays or you are actively looking at the site; the toolbar icon shows the minutes you have left.
+• Daily time budget. A time tracker counts the minutes a video plays or you are actively browsing; the toolbar icon and a small timer on the player show what is left.
 • One question per video: what is this? Learning, Entertainment, Music, or categories of your own. One click, or file a whole channel for good.
 • Budgets per category. An hour of Entertainment a day while Learning may use the rest.
-• Finish what you are watching. When a budget runs out, the current video may play to its end; then the site is closed until tomorrow.
-• Nothing is lost. Every video you were stopped on is saved for later and shown at the top of your feed.
-• Blocked hours. Close the site completely during work or at night.
-• Statistics. A report shows where your time went: per day, per category, per channel and per video, with CSV export.
-• No easy way out. Raising a limit takes effect tomorrow. One 15-minute emergency override a day, and it shows in your report.
+• Finish what you are watching. When a budget runs out, whatever is playing may run to its end; then the site is closed until tomorrow.
+• Nothing is lost. Everything you were stopped on is saved for later and shown at the top of your feed.
+• Blocked hours. A distraction blocker for the hours when you need your focus: the site stays closed during work or at night.
+• Shorts on your terms. Count them against a category without being asked, or block them entirely.
+• Statistics. See where your screen time went: per day, per category, per channel and per video, with CSV export.
+• No easy way out. Raising a limit takes effect tomorrow. One 15-minute emergency override a day, and it shows in your statistics.
+
+WHO IT IS FOR
+Students, people working from home, and anyone who opens one tutorial and looks up two hours later. It is a productivity and self-control tool against procrastination: it protects your focus without taking away the tutorials, lectures and music you came for.
 
 PRIVATE BY DESIGN
 • Everything stays in your browser. No account, no server, no analytics, no ads.
 • Nothing is recorded until you press Start on the welcome page, which tells you exactly what is kept.
-• Export or delete your data at any time. Open source (GPL-3.0).
+• Export or delete your data whenever you like. Open source (GPL-3.0).
 
 GOOD TO KNOW
 • Works on youtube.com in Chrome on a computer. The music site, the mobile app and other browsers are not covered.
@@ -72,7 +81,53 @@ YouTube is a trademark of Google LLC. Use of this trademark is subject to Google
 | Screenshot 5 | `5-welcome.png` — the welcome page with the setup | 1280x800 |
 | Small promo tile | `promo-440x280.png` | 440x280 |
 
+The screenshots in the store were taken from 1.0.0, so the third one still carries the heading "Report" (the
+page is called Statistics since 1.0.1). `node e2e/store-shots.mjs` regenerates all of them when they are next
+replaced.
+
 **Additional fields:** Homepage URL <https://github.com/MnemosyneVL/3017_YTAddictionFixer>, Support URL <https://github.com/MnemosyneVL/3017_YTAddictionFixer/issues>. Mature content: no.
+
+## Search: which words go where
+
+The store's search ranks on the listing's texts (title, summary, description) and on how the item is doing
+(ratings, installs against uninstalls); Google does not publish the weights. Its rules for the texts (listing
+guide and spam-policy FAQ, read on 2026-10-04):
+
+- The title says what the extension does; it is not a list of keywords.
+- A keyword appears fewer than five times and only where it is true of the extension. No keyword lists, no
+  names of other extensions, nothing off-topic.
+- The store shows the summary above the description, so the description does not repeat it.
+
+| Search terms | Where they are |
+|---|---|
+| addiction, time limit, tracker, blocker | title |
+| detox, focus, productivity, distraction, time tracker, statistics, budget | summary |
+| timer, Shorts, screen time, doomscrolling, procrastination, self-control, blocked hours | description |
+
+`brand.test.ts` checks the lengths, that the title carries the trademark once, that no word keeps repeating in
+title and summary, and that the search terms stay under five in the description above.
+
+Comparable extensions and their categories on 2026-10-04: Unhook, StayFocusd, Forest, LeechBlock NG and YouTube
+Detox are in Workflow & Planning, BlockSite in Tools; Well-being holds two small ones.
+
+What else moves the ranking, and what must not be done:
+
+- Ratings and reviews by real users. Never rate or review the extension yourself, and never have friends,
+  family or other accounts do it: the store treats that as manipulating placement. Asking users for an honest
+  rating is fine (the extension does); offering anything in return is not.
+- The Featured badge raises the ranking. It can be requested through the store's One Stop Support form once
+  the listing is complete and current, which includes screenshots that match the current version.
+- A listing is found in the languages it is written in. Translating title, summary and description
+  (`_locales/`) is the next step if users who do not search in English matter.
+
+## Updating the listing
+
+- Title and summary are part of the package: change `brand.json` and `public/manifest.json`, release a new
+  version and upload its zip (Package tab, "Upload new package").
+- Description, category, graphics and the privacy answers are changed in the dashboard.
+- Either way nothing goes live before "Submit for review" and a passed review; until then the published
+  listing stays as it is. While a review is pending the draft cannot be edited: wait for the result, or use
+  "Cancel review" in the item's menu, make all changes and submit once.
 
 ## Privacy practices tab
 
@@ -131,7 +186,8 @@ No account or login is needed.
 The name follows the "… for YouTube™" form the branding guidelines ask for. Should review object to the word
 "addiction" next to the trademark, resubmit as **Watch Budget for YouTube™** with the summary unchanged, and
 keep "addiction recovery" in the description only. Changing it means editing `src/shared/brand.json`
-(`name`, `label`, `slug`) and the HTML titles (`brand.test.ts` says which).
+(`name`, `title`, `label`, `slug`), `public/manifest.json` and the HTML titles (`brand.test.ts` says which).
+Version 1.0.0 was accepted under the name as it is.
 
 ## If the icon is rejected
 

@@ -23,7 +23,7 @@ TypeScript in `src/shared/` and unit-tested; the service worker and content scri
 
 | Part | Files | Responsibility |
 |---|---|---|
-| Shared logic | `src/shared/*.ts` | Types, URL parsing, day keys, counting rule, time accounting, limits, policy, report derivations, storage defaults/migrations, message types, validation of everything that crosses a trust boundary, and the product name and links (`brand.json` / `brand.ts`). No `chrome.*`, no DOM. |
+| Shared logic | `src/shared/*.ts` | Types, URL parsing, day keys, counting rule, time accounting, limits, policy, report derivations, storage defaults/migrations, message types, validation of everything that crosses a trust boundary, and the product name, the store title and summary, and the links (`brand.json` / `brand.ts`). No `chrome.*`, no DOM. |
 | Service worker | `src/background/*.ts` | Owns all state. Receives heartbeats, credits time, detects limits, decides allow/block, enforces, notifies, keeps the badge, schedules alarms, fetches video metadata (oEmbed). |
 | Content script | `src/content/index.ts`, `player.ts`, `prompt.ts`, `timer.ts`, `toast.ts`, `shelf.ts` | Observes the page (visibility, focus, `<video>` state, fullscreen, PiP), sends heartbeats, shows the category prompt, the on-video timer pill, toasts and the saved-for-later shelf on the feed, executes blocks (`location.replace`). |
 | Bridge | `src/content/bridge.ts` (MAIN world) | Reads YouTube's player API (`#movie_player`): video id, channel id, title, live flag, duration/current time, player state. Posts plain objects via `window.postMessage`. |

@@ -271,3 +271,29 @@ a pause symbol on top ("pausing the YouTube addiction").
   `npm run icons -- --design ring` renders the fallback (pause bars in a progress ring) from the same script.
 - Store graphics are generated (`e2e/store-shots.mjs`) from fictional data over a mock video page, so no
   third-party title, thumbnail or logo appears in the listing.
+
+## 2026-10-04 — Store title, search terms and category; "Statistics" instead of "Report"
+
+Version 1.0.0 went live under Social Networking (a mix-up of translated category names) and could at first
+be found only by its address. The owner asked how to be found for the words comparable extensions use:
+productivity, distraction, blocker, time tracker, detox, focus.
+
+- **The store title is the name plus what it does.** `title` in `brand.json` is the manifest's `name`:
+  "Addiction Recovery for YouTube™ – Time Limit, Tracker & Blocker". The product's name (`name`) is unchanged
+  and is what the extension's own pages and the toolbar tooltip show. The store's search reads title, summary
+  and description, and the large comparable extensions all carry a few descriptive words in the title. The
+  owner chose this title over "… – Time Limit & Distraction Blocker" and over leaving the title alone.
+- **Summary:** "YouTube detox for focus and productivity: a daily time budget, time tracker, statistics and a
+  distraction blocker. Fully on-device." The remaining terms are in the description, each fewer than five
+  times (the store's spam rule) and only where they are true of the extension: it is not a general website
+  blocker and it hides nothing on the page, so the listing does not say so.
+- **Category: Workflow & Planning.** Google describes it as "time trackers, tools to stay focused", and
+  Unhook, StayFocusd, Forest, LeechBlock NG and YouTube Detox are filed there; Well-being ("self-help,
+  mindfulness, personal development"), the first plan, held only two small YouTube tools. The category also
+  decides which extensions the store shows next to this one.
+- **"Statistics", not "Report".** A button labelled "Report" next to an extension reads like "report this
+  extension". The popup, the placeholder page, the help page, Settings and the page's own heading say
+  Statistics, and exported files are named `…-statistics-….csv`. Internal names (`report.html`, `report.ts`,
+  `getReport`, `buildReport`) stay, as with the earlier rename of the product: nothing migrates.
+- Not done: translating the listing (it would then be found in other languages, but the interface is English
+  only) and new store screenshots (the owner did not want them for this change; the third still says "Report").

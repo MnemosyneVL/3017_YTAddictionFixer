@@ -50,7 +50,8 @@ const manifest = await readJson(path.join(unpacked, 'manifest.json'));
 
 // ---- manifest ---------------------------------------------------------------------------------------------
 if (manifest.manifest_version !== 3) problems.push('manifest_version is not 3');
-if (manifest.name !== brand.name) problems.push(`manifest name "${manifest.name}" differs from brand.json`);
+if (manifest.name !== brand.title) problems.push(`manifest name "${manifest.name}" differs from the title in brand.json`);
+if (manifest.action?.default_title !== brand.name) problems.push('the toolbar title differs from the name in brand.json');
 if (manifest.description !== brand.summary) problems.push('manifest description differs from brand.json summary');
 if ([...manifest.name].length > 75) problems.push(`name is ${[...manifest.name].length} characters (store limit 75)`);
 if ([...manifest.description].length > 132) problems.push(`summary is ${[...manifest.description].length} characters (store limit 132)`);

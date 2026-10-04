@@ -2,7 +2,10 @@
 // the packaging script all read the same values. Pure.
 import brand from './brand.json';
 
-/** The full name, as in the store listing. */
+/**
+ * The product's name, as the extension's own pages show it. The store listing and the browser's extension list
+ * use `title` from brand.json (the manifest's `name`): this name followed by a few words on what it does.
+ */
 export const APP_NAME: string = brand.name;
 /** The name without the "for YouTube™" reference; page headers show the reference smaller next to it. */
 export const APP_LABEL: string = brand.label;

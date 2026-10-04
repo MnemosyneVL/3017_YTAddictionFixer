@@ -12,6 +12,9 @@ adheres to [Semantic Versioning](https://semver.org/).
   that said "Report" looked like "report this extension". CSV exports are named
   `youtube-time-budget-statistics-…`. The privacy policy uses the same word now; what is recorded has not
   changed.
+- In the Chrome Web Store and in Chrome's list of extensions the extension now appears as "Addiction Recovery
+  for YouTube™ – Time Limit, Tracker & Blocker", with a new one-line summary, so that people who search for a
+  time limit, a time tracker or a blocker for YouTube find it. Inside the extension the name is unchanged.
 - The README links to the extension's page in the Chrome Web Store, now that it is published: installing is
   one click on "Add to Chrome" there.
 
