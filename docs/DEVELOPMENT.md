@@ -18,7 +18,7 @@
 | `npm test` | Unit tests (Vitest) for the pure logic in `src/shared/`. |
 | `npm run check` | typecheck + test + build — must pass before every commit. |
 | `npm run icons` | Regenerates `public/icons/*.png` (no dependencies). `-- --design ring` renders the fallback design, `-- --preview <file.png>` also writes a sheet with every size enlarged on a light and a dark toolbar colour. |
-| `npm run e2e` | Browser smoke tests with Puppeteer + Chrome for Testing (see below). |
+| `npm run e2e` | Browser smoke tests with Puppeteer + Chrome for Testing against live youtube.com (see "Environment notes"). `npm run e2e -- --headless` runs them without a window, as does `npm run e2e:setup -- --headless`; the other harnesses are always headless. |
 | `npm run e2e:setup` | First-run flow against real youtube.com: nothing is recorded before "Start", the chosen limit applies the same day, an open video is picked up, "Delete everything" returns to the first-run state, an older installation is not gated. |
 | `npm run e2e:ui [dir]` | Screenshots every extension page into `dir` (default: the temp folder): the welcome page, popup and settings of a fresh installation, then popup, settings, statistics (`report.png`) and the help page with sample data. Fails on a page error or an unrendered page. |
 | `npm run e2e:stale` | Verifies the stale-service-worker banner (no banner when builds match, banner on mismatch). |
@@ -123,12 +123,17 @@ relaunches). Open YouTube tabs are re-injected automatically after a reload.
 
 1. `npm run check`, `npm run e2e`, `npm run e2e:setup` and `npm run e2e:ui` are green and the manual checklist
    passed.
-2. Bump `version` in `package.json` and `public/manifest.json`.
+2. Bump `version` in `package.json`, `public/manifest.json` and the two `version` entries at the top of
+   `package-lock.json`.
 3. In `CHANGELOG.md`, rename `[Unreleased]` to `[x.y.z] - YYYY-MM-DD` and add a fresh empty `[Unreleased]`.
 4. Commit `docs: release x.y.z`, tag `vx.y.z`.
-5. `npm run package`, then `npm run e2e:release`. Upload `release/<slug>-<version>.zip` in the Chrome Web Store
-   developer dashboard (texts and answers for the listing are in `docs/STORE_LISTING.md`; "Updating the
-   listing" there says what travels in the package and what is edited in the dashboard).
+5. `npm run package`, then `npm run e2e:release`.
+6. Push `main` and the tag (`git push origin main`, `git push origin vx.y.z`).
+7. In the Chrome Web Store developer dashboard: upload `release/<slug>-<version>.zip` (Package tab), change
+   there whatever the package does not carry (description, category, graphics, privacy answers: see
+   `docs/STORE_LISTING.md`, "Updating the listing"), and submit for review.
+8. Once the review has passed, check the public listing (version, title) and update the Status line in
+   `docs/STORE_LISTING.md`.
 
 A new permission makes `npm run package` fail on purpose: add it to `EXPECTED_PERMISSIONS` in
 `scripts/package.mjs` only together with its justification in `docs/STORE_LISTING.md`.

@@ -9,11 +9,17 @@ Listing: <https://chromewebstore.google.com/detail/addiction-recovery-for-yo/foj
 (item ID `fojplifgklngfhhipbpnmkgmjlnkmhdp`). A new or renamed item can be opened by this address at once; the
 store's own search picks it up later.
 
-## Before the first upload
+**Status** (checked 2026-10-28): version 1.0.1 has been live since 2026-10-06, in Workflow & Planning, with the
+title, summary and description below. The graphics are still the ones uploaded with 1.0.0 (the same files
+`node e2e/store-shots.mjs` wrote then). Update this line whenever a new version or listing change goes live.
 
-1. `npm run package` and `npm run e2e:release` are green; upload `release/addiction-recovery-for-youtube-<version>.zip`.
-2. `node e2e/store-shots.mjs` has produced the screenshots and the promo tile in `release/store/`.
-3. `PRIVACY.md` is reachable at its public URL (it is the privacy-policy URL below).
+## Before an upload
+
+1. `npm run package` and `npm run e2e:release` are green; the file to upload is
+   `release/addiction-recovery-for-youtube-<version>.zip`.
+2. Only when the graphics change: `node e2e/store-shots.mjs` writes the screenshots and the promo tile to
+   `release/store/`.
+3. `PRIVACY.md` is reachable at its public URL (the privacy-policy URL below) and is still true for this version.
 
 ## Store listing tab
 
@@ -81,9 +87,9 @@ YouTube is a trademark of Google LLC. Use of this trademark is subject to Google
 | Screenshot 5 | `5-welcome.png` — the welcome page with the setup | 1280x800 |
 | Small promo tile | `promo-440x280.png` | 440x280 |
 
-The screenshots in the store were taken from 1.0.0, so the third one still carries the heading "Report" (the
-page is called Statistics since 1.0.1). `node e2e/store-shots.mjs` regenerates all of them when they are next
-replaced.
+The store still shows the screenshots uploaded with 1.0.0, so the statistics screenshot (`3-report.png`) carries
+the old heading "Report" (the page is called Statistics since 1.0.1). `node e2e/store-shots.mjs` regenerates all
+of them when they are next replaced.
 
 **Additional fields:** Homepage URL <https://github.com/MnemosyneVL/3017_YTAddictionFixer>, Support URL <https://github.com/MnemosyneVL/3017_YTAddictionFixer/issues>. Mature content: no.
 
@@ -187,14 +193,16 @@ The name follows the "… for YouTube™" form the branding guidelines ask for. 
 "addiction" next to the trademark, resubmit as **Watch Budget for YouTube™** with the summary unchanged, and
 keep "addiction recovery" in the description only. Changing it means editing `src/shared/brand.json`
 (`name`, `title`, `label`, `slug`), `public/manifest.json` and the HTML titles (`brand.test.ts` says which).
-Version 1.0.0 was accepted under the name as it is.
+1.0.0 and 1.0.1 (with the longer title) were accepted as they are; this only matters if a later review objects.
 
 ## If the icon is rejected
 
 `node scripts/make-icons.mjs --design ring` renders the fallback (a pause symbol inside a progress ring, no
-syringe, no play triangle). Rebuild, regenerate the screenshots, resubmit.
+syringe, no play triangle). Rebuild, regenerate the screenshots, resubmit. The icon was accepted with 1.0.0.
 
 ## Developer account checklist
+
+Done on 2026-10-01; the declaration is non-trader.
 
 - Registered with a dedicated account (its e-mail can never be changed later); one-time registration fee paid.
 - 2-step verification is on (mandatory for publishing).
