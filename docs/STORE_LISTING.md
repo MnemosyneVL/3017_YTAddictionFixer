@@ -135,6 +135,28 @@ What else moves the ranking, and what must not be done:
   listing stays as it is. While a review is pending the draft cannot be edited: wait for the result, or use
   "Cancel review" in the item's menu, make all changes and submit once.
 
+## Reading the numbers
+
+The dashboard and Google Analytics count different things (Google's "Analyze your store listing metrics" and
+"Use your Google Analytics account with the Chrome Web Store", read on 2026-10-28):
+
+| Where | What it counts |
+|---|---|
+| Dashboard, installs and uninstalls («Данные об установках и удалениях») | Every install and uninstall, returning users included: a reinstall counts again. |
+| Dashboard, users («Пользователи») | Installations that still exist, per week. It does not measure whether they are used. The user count on the public listing is this number. |
+| Dashboard, impressions («Показы») | People who came across the item while searching or browsing the store: shown in a collection, or a direct visit to the listing. |
+| Google Analytics (the property named after the item ID) | Visits to the store listing that Google Analytics could measure (`page_view`, `first_visit`, `session_start`), and an `install` event when such a visitor installs. |
+
+- The extension itself sends nothing anywhere, so nothing counts how it is used. Google Analytics only sees the
+  store page.
+- Google Analytics misses visitors with ad blockers and visitors who decline cookies. The store's property is
+  also de-identified: small numbers may be withheld (the "report filtering" notice at the top), data is kept for
+  two months, and nothing exists from before the opt-in. Its install count is therefore always lower than the
+  dashboard's.
+- `utm_source`, `utm_medium` and `utm_campaign` on a link to the listing are passed on to Google Analytics, so a
+  tagged link (README, Ko-fi, a post) shows up as its own source. Links inside the extension stay untagged: the
+  privacy policy says the extension sends nothing to the sites it links to.
+
 ## Privacy practices tab
 
 **Single purpose:**
