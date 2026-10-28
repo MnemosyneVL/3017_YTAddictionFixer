@@ -148,7 +148,12 @@ The dashboard and Google Analytics count different things (Google's "Analyze you
 | Google Analytics (the property named after the item ID) | Visits to the store listing that Google Analytics could measure (`page_view`, `first_visit`, `session_start`), and an `install` event when such a visitor installs. |
 
 - The extension itself sends nothing anywhere, so nothing counts how it is used. Google Analytics only sees the
-  store page.
+  store page: its "users" are store-page visitors, not people using the extension.
+- The dashboard lists its own charts (installs, impressions, users, ratings) under a menu heading called "Google
+  Analytics". They are the store's counts, not the Google Analytics property.
+- Session source `ext_sidebar` means the visitor reached the store through the "Discover more extensions" link
+  on `chrome://extensions`; the tag stays in the address while they browse and search the store. The
+  "Business objectives" reports (leads, sales) are Google Analytics templates for websites and do not apply.
 - Google Analytics misses visitors with ad blockers and visitors who decline cookies. The store's property is
   also de-identified: small numbers may be withheld (the "report filtering" notice at the top), data is kept for
   two months, and nothing exists from before the opt-in. Its install count is therefore always lower than the
